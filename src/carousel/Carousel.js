@@ -726,7 +726,8 @@ export default class Carousel extends Component {
         const { data, loopClonesPerSide } = this.props;
         const dataLength = data && data.length;
 
-        if (typeof index === 'undefined' || !this._shouldRepositionScroll(index)) {
+        if (typeof index === 'undefined' || !this._shouldRepositionScroll(index)
+            || (this._enableLoop() && this._autoplay)) {
             return;
         }
 
